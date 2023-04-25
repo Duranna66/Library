@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Edit</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/people/{id}/change(id=${client.getId()})}" th:object="${client}">
+    <label for="FIO" >
+        Введите ФИО:
+        <input type="text" id="FIO"  th:field="*{FIO}" th:value="${client.getFIO()}">
+    </label>
+    <br>
+    <label for="YEARS">
+        Введите год рождения:
+        <input type="text" id="YEARS" th:field="*{yearOfBorn}" th:value="${client.yearOfBorn}">
+    </label>
+    <input type="submit" value="Редактировать">
+</form>
+</body>
+</html>
